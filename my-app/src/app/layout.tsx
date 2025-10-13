@@ -2,6 +2,8 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { useState } from "react";
+import Link from 'next/link';
+import Image from 'next/image';
 // Import global CSS styles
 import "./globals.css";
 
@@ -24,9 +26,11 @@ function DynamicHeader() {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3 animate-slide-in-left">
             <div className="relative">
-              <img 
+              <Image 
                 src="/img/logo_mariuxi.png" 
                 alt="Logo María Auxiliadora" 
+                width={48}
+                height={56}
                 className="w-12 h-14 object-contain hover-lift cursor-pointer" 
               />
               <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-sky-500 rounded-lg opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
@@ -35,10 +39,10 @@ function DynamicHeader() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="font-heading font-medium text-white hover:text-pink-300 transition-all duration-300 relative group text-shadow-soft">
+            <Link href="/" className="font-heading font-medium text-white hover:text-pink-300 transition-all duration-300 relative group text-shadow-soft">
               Inicio
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
-            </a>
+            </Link>
             <a href="/admisiones" className="font-heading font-medium text-white hover:text-pink-300 transition-all duration-300 relative group text-shadow-soft">
               Admisiones
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-sky-400 group-hover:w-full transition-all duration-300"></span>
@@ -81,13 +85,13 @@ function DynamicHeader() {
         }`}>
           <div className="bg-gray-900/95 backdrop-blur-xl rounded-2xl p-6 border border-pink-500/20 shadow-2xl">
             <div className="flex flex-col space-y-4">
-              <a 
+              <Link 
                 href="/" 
                 className="font-heading font-semibold text-white hover:text-pink-300 py-3 px-4 rounded-xl hover:bg-pink-500/20 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Inicio
-              </a>
+              </Link>
               <a 
                 href="/admisiones" 
                 className="font-heading font-semibold text-white hover:text-pink-300 py-3 px-4 rounded-xl hover:bg-pink-500/20 transition-all duration-300"
@@ -169,7 +173,7 @@ export default function RootLayout({
                   </div>
                 </div>
                 <p className="text-gray-300 font-body leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  Educando estudiantes desde 1943. <span className="text-gradient font-semibold">"Educar con el corazón para la vida"</span> - Formación integral en valores cristianos y excelencia académica.
+                  Educando estudiantes desde 1943. <span className="text-gradient font-semibold">&ldquo;Educar con el corazón para la vida&rdquo;</span> - Formación integral en valores cristianos y excelencia académica.
                 </p>
                 
                 {/* Redes sociales */}
@@ -218,7 +222,7 @@ export default function RootLayout({
             <div className="border-t border-gray-700 mt-12 pt-8 text-center animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <p className="text-gray-400 font-body">
-                  &copy; 2025 Escuela de Educación Básica "María Auxiliadora" - Todos los derechos reservados
+                  &copy; 2025 Escuela de Educación Básica &ldquo;María Auxiliadora&rdquo; - Todos los derechos reservados
                 </p>
                 <p className="text-sm text-gray-500 font-body">
                   Desarrollado con ❤️ para la educación

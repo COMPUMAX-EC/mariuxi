@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +57,7 @@ export default function Home() {
         
         {/* Logo flotante */}
         <div className="mb-8 animate-pulse-soft">
-          <img src="/img/logo_mariuxi.png" alt="Logo María Auxiliadora" className="w-24 h-24 mx-auto" />
+          <Image src="/img/logo_mariuxi.png" alt="Logo María Auxiliadora" width={96} height={96} className="w-24 h-24 mx-auto" />
         </div>
         
         <h1 className={`font-display text-4xl md:text-7xl font-bold text-gray-800 mb-6 text-shadow-soft transition-all duration-700 ${
@@ -68,7 +69,7 @@ export default function Home() {
         <h2 className={`font-heading text-3xl md:text-6xl font-black mb-6 text-gradient transition-all duration-700 ${
           isVisible ? 'animate-fade-in-up' : ''
         }`} style={{ animationDelay: '0.4s' }}>
-          "María Auxiliadora"
+          &ldquo;María Auxiliadora&rdquo;
         </h2>
         
         <p className={`font-display text-xl md:text-3xl text-gray-700 mb-8 font-medium italic transition-all duration-700 ${
